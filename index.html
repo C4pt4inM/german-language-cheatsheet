@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>German Grammar with TailwindCSS</title>
-    <style>
+    <style type="text/tailwindcss">
         /* Custom styles to make the left div fixed */
         .fixed-div {
             position: fixed;
@@ -35,6 +35,18 @@
             margin-bottom: 100px;
         }
 
+        @layer components {
+            .tdClass {
+                @apply border border-gray-300 px-4 py-2;
+            }
+            .tableClass {
+                @apply min-w-full table-auto border-collapse border border-gray-300 mt-4;
+            }
+            .thClass {
+                @apply border border-gray-300 px-4 py-2 text-gray-700 font-bold;
+            }
+        }
+
     </style>
 </head>
 
@@ -54,6 +66,10 @@
                     <li><a href="#personal-pronouns" title="German Personal Pronouns">German Personal Pronouns</a></li>
                     <li><a href="#sein-forms" title="Forms of the Verb \"sein\" (to be)">Forms of the Verb "sein" (to be)</a></li>
                     <li><a href="#gender-adjectives" title="German Gender and Adjective Endings">German Gender and Adjective Endings</a></li>
+                    <li><a href="#akkusative-with-verbs" title="Accusative with Verbs">Accusative with Verbs</a></li>
+                    <li><a href="#possessiv-pronouns" title="Posessive Pronouns">Posessive Pronouns</a></li>
+                    <li><a href="#sein-form-with-tenses" title="Sein Form With Tenses">Sein Form With Tenses</a></li>
+                    <li><a href="#model-verbs" title="Model Verbs">Model Verbs</a></li>
                     <li><a href="#" title=""></a></li>
                     <li><a href="#" title=""></a></li>
                 </ul>
@@ -106,39 +122,39 @@
                 <section id="genders-in-cases">
                     <h2 class="my-6 text-4xl font-bold">Genders in Nominative, Accusative, Dative, and Genitive</h2>
                 
-                    <table class="min-w-full table-auto border-collapse border border-gray-300 mt-4">
+                    <table class="tableClass">
                         <thead>
                             <tr>
-                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Case</th>
-                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Masculine</th>
-                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Feminine</th>
-                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Neuter</th>
+                                <th class="thClass">Case</th>
+                                <th class="thClass">Masculine</th>
+                                <th class="thClass">Feminine</th>
+                                <th class="thClass">Neuter</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Nominative</td>
-                                <td class="border border-gray-300 px-4 py-2">der</td>
-                                <td class="border border-gray-300 px-4 py-2">die</td>
-                                <td class="border border-gray-300 px-4 py-2">das</td>
+                                <td class="tdClass">Nominative</td>
+                                <td class="tdClass">der</td>
+                                <td class="tdClass">die</td>
+                                <td class="tdClass">das</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Accusative</td>
-                                <td class="border border-gray-300 px-4 py-2">den</td>
-                                <td class="border border-gray-300 px-4 py-2">die</td>
-                                <td class="border border-gray-300 px-4 py-2">das</td>
+                                <td class="tdClass">Accusative</td>
+                                <td class="tdClass">den</td>
+                                <td class="tdClass">die</td>
+                                <td class="tdClass">das</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Dative</td>
-                                <td class="border border-gray-300 px-4 py-2">dem</td>
-                                <td class="border border-gray-300 px-4 py-2">der</td>
-                                <td class="border border-gray-300 px-4 py-2">dem</td>
+                                <td class="tdClass">Dative</td>
+                                <td class="tdClass">dem</td>
+                                <td class="tdClass">der</td>
+                                <td class="tdClass">dem</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Genitive</td>
-                                <td class="border border-gray-300 px-4 py-2">des</td>
-                                <td class="border border-gray-300 px-4 py-2">der</td>
-                                <td class="border border-gray-300 px-4 py-2">des</td>
+                                <td class="tdClass">Genitive</td>
+                                <td class="tdClass">des</td>
+                                <td class="tdClass">der</td>
+                                <td class="tdClass">des</td>
                             </tr>
                         </tbody>
                     </table>
@@ -147,193 +163,234 @@
                     <h2 class="my-6 text-4xl font-bold">German Alphabets, Sounds, and Umlauts</h2>
                 
                     <!-- Table for Alphabets and their Sounds -->
-                    <table class="min-w-full table-auto border-collapse border border-gray-300 mt-4">
+                    <table class="tableClass">
                         <thead>
                             <tr>
-                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Letter</th>
-                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Sound</th>
+                                <th class="thClass">Letter</th>
+                                <th class="thClass">Sound</th>
                             </tr>
                         </thead>
                         <tbody>
                             <!-- For simplicity, I'll give a few examples. The sounds might not be exactly represented as they would in phonetics, but they provide an approximate understanding. -->
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">A, a</td>
-                                <td class="border border-gray-300 px-4 py-2">ah</td>
+                                <td class="tdClass">A, a</td>
+                                <td class="tdClass">ah</td>
                             </tr>
                             <!-- ... -->
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Ä, ä</td>
-                                <td class="border border-gray-300 px-4 py-2">similar to "air"</td>
+                                <td class="tdClass">Ä, ä</td>
+                                <td class="tdClass">similar to "air"</td>
                             </tr>
                             <!-- ... -->
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Ö, ö</td>
-                                <td class="border border-gray-300 px-4 py-2">similar to "bird"</td>
+                                <td class="tdClass">Ö, ö</td>
+                                <td class="tdClass">similar to "bird"</td>
                             </tr>
                             <!-- ... -->
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Ü, ü</td>
-                                <td class="border border-gray-300 px-4 py-2">similar to "fleece" but with lips rounded</td>
+                                <td class="tdClass">Ü, ü</td>
+                                <td class="tdClass">similar to "fleece" but with lips rounded</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">ß</td>
-                                <td class="border border-gray-300 px-4 py-2">sharp "s" sound, like "ss" in "kiss"</td>
+                                <td class="tdClass">ß</td>
+                                <td class="tdClass">sharp "s" sound, like "ss" in "kiss"</td>
                             </tr>
                         </tbody>
                     </table>
                 
                     <!-- Table for Combined Letters and their Sounds -->
                     <h3 class="mt-6">Sounds for Combined Letters</h3>
-                    <table class="min-w-full table-auto border-collapse border border-gray-300 mt-4">
+                    <table class="tableClass">
                         <thead>
                             <tr>
-                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Combined Letters</th>
-                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Sound</th>
+                                <th class="thClass">Combined Letters</th>
+                                <th class="thClass">Sound</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">ei</td>
-                                <td class="border border-gray-300 px-4 py-2">like "eye"</td>
+                                <td class="tdClass">ei</td>
+                                <td class="tdClass">like "eye"</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">ie</td>
-                                <td class="border border-gray-300 px-4 py-2">like "ee"</td>
+                                <td class="tdClass">ie</td>
+                                <td class="tdClass">like "ee"</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">eu</td>
-                                <td class="border border-gray-300 px-4 py-2">like "oy" in "boy"</td>
+                                <td class="tdClass">eu</td>
+                                <td class="tdClass">like "oy" in "boy"</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">au</td>
-                                <td class="border border-gray-300 px-4 py-2">like "ow" in "cow"</td>
+                                <td class="tdClass">au</td>
+                                <td class="tdClass">like "ow" in "cow"</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">sch</td>
-                                <td class="border border-gray-300 px-4 py-2">like "sh" in "shoe"</td>
+                                <td class="tdClass">sch</td>
+                                <td class="tdClass">like "sh" in "shoe"</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">ch</td>
-                                <td class="border border-gray-300 px-4 py-2">like "k" in "Bach" or a soft hissing sound, depending on context</td>
+                                <td class="tdClass">ch</td>
+                                <td class="tdClass">like "k" in "Bach" or a soft hissing sound, depending on context</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">pf</td>
-                                <td class="border border-gray-300 px-4 py-2">like "pf" in "Pfennig"</td>
+                                <td class="tdClass">pf</td>
+                                <td class="tdClass">like "pf" in "Pfennig"</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">tz</td>
-                                <td class="border border-gray-300 px-4 py-2">sharp "ts" sound</td>
+                                <td class="tdClass">tz</td>
+                                <td class="tdClass">sharp "ts" sound</td>
                             </tr>
+                        </tbody>
+                    </table>
+                    <p class="mt-4">As examples, consider following words and their Sounds</p>
+                    <table class="tableClass">
+                        <thead>
+                            <tr>
+                                <th class="thClass">Words</th>
+                                <th class="thClass">Sound</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="tdClass">Buch (book) </td><td class="tdClass"> [boo-kh]</td></tr>
+                            <tr><td class="tdClass">Vogel (bird) </td><td class="tdClass"> [foh-gel]</td></tr>
+                            <tr><td class="tdClass">Kinder (children) </td><td class="tdClass"> [kin-der]</td></tr>
+                            <tr><td class="tdClass">Mädchen (girl) </td><td class="tdClass"> [mehd-chen]</td></tr>
+                            <tr><td class="tdClass">Hund (dog) </td><td class="tdClass"> [hoont]</td></tr>
+                            <tr><td class="tdClass">Katze (cat) </td><td class="tdClass"> [kaht-se]</td></tr>
+                            <tr><td class="tdClass">Auto (car) </td><td class="tdClass"> [ow-to]</td></tr>
+                            <tr><td class="tdClass">Fenster (window) </td><td class="tdClass"> [fen-ster]</td></tr>
+                            <tr><td class="tdClass">Tisch (table) </td><td class="tdClass"> [tish]</td></tr>
+                            <tr><td class="tdClass">Brot (bread) </td><td class="tdClass"> [broht]</td></tr>
+                            <tr><td class="tdClass">Wasser (water) </td><td class="tdClass"> [vah-ser]</td></tr>
+                            <tr><td class="tdClass">Milch (milk) </td><td class="tdClass"> [milkh]</td></tr>
+                            <tr><td class="tdClass">Freund (friend) </td><td class="tdClass"> [froynd]</td></tr>
+                            <tr><td class="tdClass">Haus (house) </td><td class="tdClass"> [howss]</td></tr>
+                            <tr><td class="tdClass">Straße (street) </td><td class="tdClass"> [shtrah-sse]</td></tr>
+                            <tr><td class="tdClass">Baum (tree) </td><td class="tdClass"> [bowm]</td></tr>
+                            <tr><td class="tdClass">Blume (flower) </td><td class="tdClass"> [bloo-me]</td></tr>
+                            <tr><td class="tdClass">Schule (school) </td><td class="tdClass"> [shoo-le]</td></tr>
+                            <tr><td class="tdClass">Licht (light) </td><td class="tdClass"> [likht]</td></tr>
+                            <tr><td class="tdClass">Apfel (apple) </td><td class="tdClass"> [ahp-fel]</td></tr>
+                            <tr><td class="tdClass">Stuhl (chair) </td><td class="tdClass"> [shtool]</td></tr>
+                            <tr><td class="tdClass">Zug (train) </td><td class="tdClass"> [tsoog]</td></tr>
+                            <tr><td class="tdClass">Vater (father) </td><td class="tdClass"> [fah-ter]</td></tr>
+                            <tr><td class="tdClass">Mutter (mother) </td><td class="tdClass"> [moo-ter]</td></tr>
+                            <tr><td class="tdClass">Bruder (brother) </td><td class="tdClass"> [broo-der]</td></tr>
+                            <tr><td class="tdClass">Schwester (sister) </td><td class="tdClass"> [shves-ter]</td></tr>
+                            <tr><td class="tdClass">Hand (hand) </td><td class="tdClass"> [hahnd]</td></tr>
+                            <tr><td class="tdClass">Kopf (head) </td><td class="tdClass"> [kohpf]</td></tr>
+                            <tr><td class="tdClass">Auge (eye) </td><td class="tdClass"> [ow-ge]</td></tr>
+                            <tr><td class="tdClass">Ohr (ear) </td><td class="tdClass"> [ohr]</td></tr>
                         </tbody>
                     </table>
                 </section>
                 <section id="personal-pronouns">
                     <h2 class="my-6 text-4xl font-bold">German Personal Pronouns</h2>
                 
-                    <table class="min-w-full table-auto border-collapse border border-gray-300 mt-4">
+                    <table class="tableClass">
                         <thead>
                             <tr>
-                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Pronoun</th>
-                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">English Meaning</th>
-                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Pronunciation</th>
+                                <th class="thClass">Pronoun</th>
+                                <th class="thClass">English Meaning</th>
+                                <th class="thClass">Pronunciation</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">ich</td>
-                                <td class="border border-gray-300 px-4 py-2">I</td>
-                                <td class="border border-gray-300 px-4 py-2">eekh (soft 'kh')</td>
+                                <td class="tdClass">ich</td>
+                                <td class="tdClass">I</td>
+                                <td class="tdClass">eekh (soft 'kh')</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">du</td>
-                                <td class="border border-gray-300 px-4 py-2">you (informal, singular)</td>
-                                <td class="border border-gray-300 px-4 py-2">doo</td>
+                                <td class="tdClass">du</td>
+                                <td class="tdClass">you (informal, singular)</td>
+                                <td class="tdClass">doo</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">er</td>
-                                <td class="border border-gray-300 px-4 py-2">he</td>
-                                <td class="border border-gray-300 px-4 py-2">air</td>
+                                <td class="tdClass">er</td>
+                                <td class="tdClass">he</td>
+                                <td class="tdClass">air</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">sie</td>
-                                <td class="border border-gray-300 px-4 py-2">she</td>
-                                <td class="border border-gray-300 px-4 py-2">zee</td>
+                                <td class="tdClass">sie</td>
+                                <td class="tdClass">she</td>
+                                <td class="tdClass">zee</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">es</td>
-                                <td class="border border-gray-300 px-4 py-2">it</td>
-                                <td class="border border-gray-300 px-4 py-2">es</td>
+                                <td class="tdClass">es</td>
+                                <td class="tdClass">it</td>
+                                <td class="tdClass">es</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">wir</td>
-                                <td class="border border-gray-300 px-4 py-2">we</td>
-                                <td class="border border-gray-300 px-4 py-2">veer</td>
+                                <td class="tdClass">wir</td>
+                                <td class="tdClass">we</td>
+                                <td class="tdClass">veer</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">ihr</td>
-                                <td class="border border-gray-300 px-4 py-2">you (informal, plural)</td>
-                                <td class="border border-gray-300 px-4 py-2">eer</td>
+                                <td class="tdClass">ihr</td>
+                                <td class="tdClass">you (informal, plural)</td>
+                                <td class="tdClass">eer</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">sie</td>
-                                <td class="border border-gray-300 px-4 py-2">they</td>
-                                <td class="border border-gray-300 px-4 py-2">zee</td>
+                                <td class="tdClass">sie</td>
+                                <td class="tdClass">they</td>
+                                <td class="tdClass">zee</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Sie</td>
-                                <td class="border border-gray-300 px-4 py-2">you (formal, singular & plural)</td>
-                                <td class="border border-gray-300 px-4 py-2">zee</td>
+                                <td class="tdClass">Sie</td>
+                                <td class="tdClass">you (formal, singular & plural)</td>
+                                <td class="tdClass">zee</td>
                             </tr>
                         </tbody>
                     </table>
                 </section>
                 <section id="sein-forms">
-                    <h2>Forms of the Verb "sein" (to be)</h2>
+                    <h2 class="my-6 text-4xl font-bold">Forms of the Verb "sein" (to be)</h2>
                 
-                    <table class="min-w-full table-auto border-collapse border border-gray-300 mt-4">
+                    <table class="tableClass">
                         <thead>
                             <tr>
-                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Pronoun</th>
-                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Form of "sein"</th>
-                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Examples</th>
+                                <th class="thClass">Pronoun</th>
+                                <th class="thClass">Form of "sein"</th>
+                                <th class="thClass">Examples</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">ich</td>
-                                <td class="border border-gray-300 px-4 py-2">bin</td>
-                                <td class="border border-gray-300 px-4 py-2">Ich bin ein Mann (maan). (I am a man.)<br>Ich bin müde (mü-deh). (I am tired.)<br>Ich bin glücklich (glück-lish). (I am happy.)</td>
+                                <td class="tdClass">ich</td>
+                                <td class="tdClass">bin</td>
+                                <td class="tdClass">Ich bin ein Mann (maan). (I am a man.)<br>Ich bin müde (mü-deh). (I am tired.)<br>Ich bin glücklich (glück-lish). (I am happy.)</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">du</td>
-                                <td class="border border-gray-300 px-4 py-2">bist</td>
-                                <td class="border border-gray-300 px-4 py-2">Du bist eine Frau (frow). (You are a woman.)<br>Du bist jung (yung). (You are young.)<br>Du bist freundlich (froynd-lish). (You are friendly.)</td>
+                                <td class="tdClass">du</td>
+                                <td class="tdClass">bist</td>
+                                <td class="tdClass">Du bist eine Frau (frow). (You are a woman.)<br>Du bist jung (yung). (You are young.)<br>Du bist freundlich (froynd-lish). (You are friendly.)</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">er/sie/es</td>
-                                <td class="border border-gray-300 px-4 py-2">ist</td>
-                                <td class="border border-gray-300 px-4 py-2">Er ist ein Lehrer (lay-rer). (He is a teacher.)<br>Sie ist Ärztin (air-ts-tin). (She is a doctor.)<br>Es ist kalt (kalt). (It is cold.)</td>
+                                <td class="tdClass">er/sie/es</td>
+                                <td class="tdClass">ist</td>
+                                <td class="tdClass">Er ist ein Lehrer (lay-rer). (He is a teacher.)<br>Sie ist Ärztin (air-ts-tin). (She is a doctor.)<br>Es ist kalt (kalt). (It is cold.)</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">wir</td>
-                                <td class="border border-gray-300 px-4 py-2">sind</td>
-                                <td class="border border-gray-300 px-4 py-2">Wir sind Studenten (shtoo-den-ten). (We are students.)<br>Wir sind in Berlin (ber-leen). (We are in Berlin.)<br>Wir sind Freunde (froynde). (We are friends.)</td>
+                                <td class="tdClass">wir</td>
+                                <td class="tdClass">sind</td>
+                                <td class="tdClass">Wir sind Studenten (shtoo-den-ten). (We are students.)<br>Wir sind in Berlin (ber-leen). (We are in Berlin.)<br>Wir sind Freunde (froynde). (We are friends.)</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">ihr</td>
-                                <td class="border border-gray-300 px-4 py-2">seid</td>
-                                <td class="border border-gray-300 px-4 py-2">Ihr seid Kollegen (ko-lay-gen). (You all are colleagues.)<br>Ihr seid laut (lout). (You all are loud.)<br>Ihr seid Kinder (kin-der). (You all are children.)</td>
+                                <td class="tdClass">ihr</td>
+                                <td class="tdClass">seid</td>
+                                <td class="tdClass">Ihr seid Kollegen (ko-lay-gen). (You all are colleagues.)<br>Ihr seid laut (lout). (You all are loud.)<br>Ihr seid Kinder (kin-der). (You all are children.)</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">sie/Sie</td>
-                                <td class="border border-gray-300 px-4 py-2">sind</td>
-                                <td class="border border-gray-300 px-4 py-2">sie sind Lehrerinnen (lay-rer-innen). (They are female teachers.)<br>Sie sind meine Nachbarn (nahkh-barn). (They are my neighbors.)<br>Sie sind Frau Müller? (frow müller). (Are you Mrs. Müller?)</td>
+                                <td class="tdClass">sie/Sie</td>
+                                <td class="tdClass">sind</td>
+                                <td class="tdClass">sie sind Lehrerinnen (lay-rer-innen). (They are female teachers.)<br>Sie sind meine Nachbarn (nahkh-barn). (They are my neighbors.)<br>Sie sind Frau Müller? (frow müller). (Are you Mrs. Müller?)</td>
                             </tr>
                         </tbody>
                     </table>
                 </section>
                 <section id="gender-adjectives">
-                    <h2>German Gender and Adjective Endings</h2>
+                    <h2 class="my-6 text-4xl font-bold">German Gender and Adjective Endings</h2>
                     
                     <p>
                     In the German language, every noun has a grammatical gender: masculine (der), feminine (die), or neuter (das). When an adjective is used to describe a noun, the ending of the adjective changes to correspond to the gender (and case) of the noun it is describing. This is particularly evident in the nominative case.
@@ -343,127 +400,876 @@
                     For example, in the nominative case, masculine nouns with "der" take the adjective ending "-er". So, "der Tisch" (the table) becomes "der gute Tisch" when using the adjective "gut" (good). Similarly, feminine nouns with "die" use the ending "-e", and neuter nouns with "das" take "-es" or "-s".
                     </p>
                 
-                    <table class="min-w-full table-auto border-collapse border border-gray-300 mt-4">
+                    <table class="tableClass">
                         <thead>
                             <tr>
                                 <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold w-[400px]">Gender (Article)</th>
-                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Example Sentence with Noun</th>
-                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Example Sentence with Adjective</th>
+                                <th class="thClass">Example Sentence with Noun</th>
+                                <th class="thClass">Example Sentence with Adjective</th>
                             </tr>
                         </thead>
                         <tbody>
                             <!-- Examples with masculine "der" -->
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2 text-2xl" rowspan="4">d<hlb>er</hlb></td>
-                                <td class="border border-gray-300 px-4 py-2">Das ist d<hlb>er</hlb> Tisch.</td>
-                                <td class="border border-gray-300 px-4 py-2">Das ist ein alt<hlb>er</hlb> Tisch.</td>
+                                <td class="tdClass text-2xl" rowspan="4">d<hlb>er</hlb></td>
+                                <td class="tdClass">Das ist d<hlb>er</hlb> Tisch.</td>
+                                <td class="tdClass">Das ist ein alt<hlb>er</hlb> Tisch.</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Das ist d<hlb>er</hlb> Apfel.</td>
-                                <td class="border border-gray-300 px-4 py-2">Das ist ein grün<hlb>er</hlb> Apfel.</td>
+                                <td class="tdClass">Das ist d<hlb>er</hlb> Apfel.</td>
+                                <td class="tdClass">Das ist ein grün<hlb>er</hlb> Apfel.</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Das ist d<hlb>er</hlb> Stuhl.</td>
-                                <td class="border border-gray-300 px-4 py-2">Das ist ein bequem<hlb>er</hlb> Stuhl.</td>
+                                <td class="tdClass">Das ist d<hlb>er</hlb> Stuhl.</td>
+                                <td class="tdClass">Das ist ein bequem<hlb>er</hlb> Stuhl.</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Das ist d<hlb>er</hlb> Kuli.</td>
-                                <td class="border border-gray-300 px-4 py-2">Das ist ein blau<hlb>er</hlb> Kuli.</td>
+                                <td class="tdClass">Das ist d<hlb>er</hlb> Kuli.</td>
+                                <td class="tdClass">Das ist ein blau<hlb>er</hlb> Kuli.</td>
                             </tr>
                         
                             <!-- Examples with feminine "die" -->
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2 text-2xl" rowspan="4">d<hlb>ie</hlb></td>
-                                <td class="border border-gray-300 px-4 py-2">Das ist d<hlb>ie</hlb> Lampe.</td>
-                                <td class="border border-gray-300 px-4 py-2">Das ist eine alt<hlb>e</hlb> Lampe.</td>
+                                <td class="tdClass text-2xl" rowspan="4">d<hlb>ie</hlb></td>
+                                <td class="tdClass">Das ist d<hlb>ie</hlb> Lampe.</td>
+                                <td class="tdClass">Das ist eine alt<hlb>e</hlb> Lampe.</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Das ist d<hlb>ie</hlb> Blume.</td>
-                                <td class="border border-gray-300 px-4 py-2">Das ist eine schön<hlb>e</hlb> Blume.</td>
+                                <td class="tdClass">Das ist d<hlb>ie</hlb> Blume.</td>
+                                <td class="tdClass">Das ist eine schön<hlb>e</hlb> Blume.</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Das ist d<hlb>ie</hlb> Tür.</td>
-                                <td class="border border-gray-300 px-4 py-2">Das ist eine groß<hlb>e</hlb> Tür.</td>
+                                <td class="tdClass">Das ist d<hlb>ie</hlb> Tür.</td>
+                                <td class="tdClass">Das ist eine groß<hlb>e</hlb> Tür.</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Das ist d<hlb>ie</hlb> Zeitung.</td>
-                                <td class="border border-gray-300 px-4 py-2">Das ist eine interessant<hlb>e</hlb> Zeitung.</td>
+                                <td class="tdClass">Das ist d<hlb>ie</hlb> Zeitung.</td>
+                                <td class="tdClass">Das ist eine interessant<hlb>e</hlb> Zeitung.</td>
                             </tr>
                         
                             <!-- Examples with neuter "das" -->
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2 text-2xl" rowspan="4">das</td>
-                                <td class="border border-gray-300 px-4 py-2">Das ist das Buch.</td>
-                                <td class="border border-gray-300 px-4 py-2">Das ist ein alt<hlb>es</hlb> Buch.</td>
+                                <td class="tdClass text-2xl" rowspan="4">das</td>
+                                <td class="tdClass">Das ist das Buch.</td>
+                                <td class="tdClass">Das ist ein alt<hlb>es</hlb> Buch.</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Das ist das Fenster.</td>
-                                <td class="border border-gray-300 px-4 py-2">Das ist ein offen<hlb>es</hlb> Fenster.</td>
+                                <td class="tdClass">Das ist das Fenster.</td>
+                                <td class="tdClass">Das ist ein offen<hlb>es</hlb> Fenster.</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Das ist das Auto.</td>
-                                <td class="border border-gray-300 px-4 py-2">Das ist ein schnell<hlb>es</hlb> Auto.</td>
+                                <td class="tdClass">Das ist das Auto.</td>
+                                <td class="tdClass">Das ist ein schnell<hlb>es</hlb> Auto.</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Das ist das Kind.</td>
-                                <td class="border border-gray-300 px-4 py-2">Das ist ein klein<hlb>es</hlb> Kind.</td>
+                                <td class="tdClass">Das ist das Kind.</td>
+                                <td class="tdClass">Das ist ein klein<hlb>es</hlb> Kind.</td>
                             </tr>
                             <!-- here comes plural -->
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2 text-2xl" rowspan="12">d<hlb>ie</hlb><p>(the plural of all genders is <span class="italic text-sky-500 font-bold">die</span>)</p></td>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Tische.</td>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind die alten Tische.</td>
+                                <td class="tdClass text-2xl" rowspan="12">d<hlb>ie</hlb><p>(the plural of all genders is <span class="italic text-sky-500 font-bold">die</span>)</p></td>
+                                <td class="tdClass">Diese sind d<hlb>ie</hlb> Tische.</td>
+                                <td class="tdClass">Diese sind die alten Tische.</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Äpfel.</td>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind die grünen Äpfel.</td>
+                                <td class="tdClass">Diese sind d<hlb>ie</hlb> Äpfel.</td>
+                                <td class="tdClass">Diese sind die grünen Äpfel.</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Stühle.</td>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind die bequemen Stühle.</td>
+                                <td class="tdClass">Diese sind d<hlb>ie</hlb> Stühle.</td>
+                                <td class="tdClass">Diese sind die bequemen Stühle.</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Kulis.</td>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind die blauen Kulis.</td>
-                            </tr>
-                        
-                            <tr>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Lampen.</td>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind die alten Lampen.</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Blumen.</td>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind die schönen Blumen.</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Türen.</td>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind die großen Türen.</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Zeitungen.</td>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind die interessanten Zeitungen.</td>
+                                <td class="tdClass">Diese sind d<hlb>ie</hlb> Kulis.</td>
+                                <td class="tdClass">Diese sind die blauen Kulis.</td>
                             </tr>
                         
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Bücher.</td>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind die alten Bücher.</td>
+                                <td class="tdClass">Diese sind d<hlb>ie</hlb> Lampen.</td>
+                                <td class="tdClass">Diese sind die alten Lampen.</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Fenster.</td>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind die offenen Fenster.</td>
+                                <td class="tdClass">Diese sind d<hlb>ie</hlb> Blumen.</td>
+                                <td class="tdClass">Diese sind die schönen Blumen.</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Autos.</td>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind die schnellen Autos.</td>
+                                <td class="tdClass">Diese sind d<hlb>ie</hlb> Türen.</td>
+                                <td class="tdClass">Diese sind die großen Türen.</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Kinder.</td>
-                                <td class="border border-gray-300 px-4 py-2">Diese sind die kleinen Kinder.</td>
+                                <td class="tdClass">Diese sind d<hlb>ie</hlb> Zeitungen.</td>
+                                <td class="tdClass">Diese sind die interessanten Zeitungen.</td>
+                            </tr>
+                        
+                            <tr>
+                                <td class="tdClass">Diese sind d<hlb>ie</hlb> Bücher.</td>
+                                <td class="tdClass">Diese sind die alten Bücher.</td>
                             </tr>
                             <tr>
-                                <td class="border border-gray-300 px-4 py-2">in Nautrum <span class="italic text-sky-500 font-bold">Das</span> means <span class="italic text-sky-500 font-bold">The</span> but in plural <span class="italic text-sky-500 font-bold">Das</span> can be use for <span class="italic text-sky-500 font-bold">Those</span> as well. so all above sentences using <span class="italic text-sky-500 font-bold">Diese</span> can use <span class="italic text-sky-500 font-bold">Das</span> to say <span class="italic text-sky-500 font-bold">Those are</span></td>
-                                <td class="border border-gray-300 px-4 py-2">Das sind d<hlb>ie</hlb> Kinder.</td>
-                                <td class="border border-gray-300 px-4 py-2">Das sind die kleinen Kinder.</td>
+                                <td class="tdClass">Diese sind d<hlb>ie</hlb> Fenster.</td>
+                                <td class="tdClass">Diese sind die offenen Fenster.</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">Diese sind d<hlb>ie</hlb> Autos.</td>
+                                <td class="tdClass">Diese sind die schnellen Autos.</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">Diese sind d<hlb>ie</hlb> Kinder.</td>
+                                <td class="tdClass">Diese sind die kleinen Kinder.</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">in Nautrum <span class="italic text-sky-500 font-bold">Das</span> means <span class="italic text-sky-500 font-bold">The</span> but in plural <span class="italic text-sky-500 font-bold">Das</span> can be use for <span class="italic text-sky-500 font-bold">Those</span> as well. so all above sentences using <span class="italic text-sky-500 font-bold">Diese</span> can use <span class="italic text-sky-500 font-bold">Das</span> to say <span class="italic text-sky-500 font-bold">Those are</span></td>
+                                <td class="tdClass">Das sind d<hlb>ie</hlb> Kinder.</td>
+                                <td class="tdClass">Das sind die kleinen Kinder.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section id="akkusative-with-verbs">
+                    <h2 class="my-6 text-4xl font-bold">Accusative with Verbs</h2>
+                   
+                    
+                    <table class="tableClass">
+                        <thead>
+                            <tr>
+                                <th class="thClass">Pronoun</th>
+                                <th class="thClass">Verb Ending</th>
+                                <th class="thClass">Conjugated Verb </th>
+                                <th class="thClass">Full Sentence (Example with "spielen")</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tdClass">ich</td>
+                                <td class="tdClass">-e</td>
+                                <td class="tdClass">spiele</td>
+                                <td class="tdClass">Ich spiele Fußball.</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">du</td>
+                                <td class="tdClass">-st</td>
+                                <td class="tdClass">spielst</td>
+                                <td class="tdClass">Du spielst Fußball.</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">er/sie/es</td>
+                                <td class="tdClass">-t</td>
+                                <td class="tdClass">spielt</td>
+                                <td class="tdClass">Er/sie/es spielt Fußball.</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">wir</td>
+                                <td class="tdClass">-en</td>
+                                <td class="tdClass">spielen</td>
+                                <td class="tdClass">Wir spielen Fußball.</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">ihr</td>
+                                <td class="tdClass">-t</td>
+                                <td class="tdClass">spielt</td>
+                                <td class="tdClass">Ihr spielt Fußball.</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">sie/Sie</td>
+                                <td class="tdClass">-en</td>
+                                <td class="tdClass">spielen</td>
+                                <td class="tdClass">Sie spielen Fußball.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="ac-verb mt-4">
+                        The formula for making Akkusative sentence wit Verb is 
+
+                        <div class="bg-gray-100 mt-4 mx-auto w-[600px] shadow-lg  rounded-lg p-8 text-2xl italic">
+                            <div class="flex  items-center justifiy-center">
+                                <span class="text-sky-500">Subject</span>
+                                <span class="text-red-500 text-2xl px-2 ">+</span>
+                                <span class="text-lime-500">Verb/ Akkusative PP </span>
+                                <span class="text-red-500 text-2xl px-2 ">+</span>
+                                <span class="text-rose-500">[Gender + ] Noun</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-base text-sky-500">Das</span>
+                                <span class="text-base text-lime-500">ist </span>
+                                <span class="text-base text-rose-500">der Film</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-base text-sky-500">Das</span>
+                                <span class="text-base text-lime-500">ist </span>
+                                <span class="text-base text-rose-500">guter Film</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-base text-sky-500">Ich</span>
+                                <span class="text-base text-lime-500">kaufe </span>
+                                <span class="text-base text-rose-500">gute Tür</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-base text-sky-500">Du</span>
+                                <span class="text-base text-lime-500">bringst</span>
+                                <span class="text-base text-rose-500">große Blume</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-base text-sky-500">Wir</span>
+                                <span class="text-base text-lime-500">verkaufen </span>
+                                <span class="text-base text-rose-500">diese Autos</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="text-base text-sky-500">Ihr</span>
+                                <span class="text-base text-lime-500">trinkt </span>
+                                <span class="text-base text-rose-500">heißen Tee</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">More Examples without adjectives:</div>
+                    <table class="tableClass">
+                        <thead>
+                            <tr>
+                                <th class="thClass">Pronoun</th>
+                                <th class="thClass">Verb Ending</th>
+                                <th class="thClass">Conjugated Verb </th>
+                                <th class="thClass">Full Sentence (Example with "spielen")</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tdClass">Masculine</td>
+                                <td class="tdClass">den</td>
+                                <td class="tdClass">Ich werfe den Ball. (I throw the ball.)</td>
+                                <td class="tdClass">Ich kaufe den Stift. (I buy the pen.)</td>
+                                <td class="tdClass">Ich finde den Schlüssel. (I find the key.)</td>
+                                <td class="tdClass">Ich verliere den Hut. (I lose the hat.)</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">Feminine</td>
+                                <td class="tdClass">die</td>
+                                <td class="tdClass">Ich trage die Tasche. (I carry the bag.)</td>
+                                <td class="tdClass">Ich suche die Uhr. (I search for the watch.)</td>
+                                <td class="tdClass">Ich öffne die Tür. (I open the door.)</td>
+                                <td class="tdClass">Ich verkaufe die Jacke. (I sell the jacket.)</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">Neuter</td>
+                                <td class="tdClass">das</td>
+                                <td class="tdClass">Ich öffne das Buch. (I open the book.)</td>
+                                <td class="tdClass">Ich putze das Auto. (I clean the car.)</td>
+                                <td class="tdClass">Ich schließe das Fenster. (I close the window.)</td>
+                                <td class="tdClass">Ich zerbreche das Glas. (I break the glass.)</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">Plural</td>
+                                <td class="tdClass">die</td>
+                                <td class="tdClass">Ich lese die Zeitschriften. (I read the magazines.)</td>
+                                <td class="tdClass">Ich kaufe die Schuhe. (I buy the shoes.)</td>
+                                <td class="tdClass">Ich verkaufe die Karten. (I sell the tickets.)</td>
+                                <td class="tdClass">Ich ordne die Fotos. (I arrange the photos.)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section id="possessiv-pronouns">
+                    <h2 class="my-6 text-4xl font-bold">Posessive Pronouns</h2>
+                
+                    <table class="tableClass">
+                        <thead>
+                            <tr>
+                                <th class="thClass">Personal Pronoun</th>
+                                <th class="thClass">Posessive Pronouns</th>
+                                <th class="thClass">Examples</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tdClass">ich</td>
+                                <td class="tdClass">mein(e), mein(er), mein(e)</td>
+                                <td class="tdClass">
+                                    Mein Hund.<br>
+                                    Mein alter Hund.<br>
+                                    Sie liebt meinen Hund.<br>
+                                    Ist das dein Buch oder mein Buch?<br>
+                                    Mein kleiner Bruder spielt.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">du</td>
+                                <td class="tdClass">dein(e)</td>
+                                <td class="tdClass">
+                                    Dein Auto.<br>
+                                    Dein rotes Auto.<br>
+                                    Er fährt dein Auto.<br>
+                                    Wo ist dein neues Handy?<br>
+                                    Dein großer Bruder hilft.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">er</td>
+                                <td class="tdClass">sein(e)</td>
+                                <td class="tdClass">
+                                    Sein Ball.<br>
+                                    Sein gelber Ball.<br>
+                                    Wir sehen seinen Ball.<br>
+                                    Ist das ihr Stift oder sein Stift?<br>
+                                    Sein jüngerer Bruder lacht.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">sie (feminine)</td>
+                                <td class="tdClass">ihr(e)</td>
+                                <td class="tdClass">
+                                    Ihre Katze.<br>
+                                    Ihre schlafende Katze.<br>
+                                    Er mag ihre Katze.<br>
+                                    Ist das dein Buch oder ihr Buch?<br>
+                                    Ihre ältere Schwester singt.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">es</td>
+                                <td class="tdClass">sein(e)</td>
+                                <td class="tdClass">
+                                    Sein Spielzeug.<br>
+                                    Sein buntes Spielzeug.<br>
+                                    Du nimmst sein Spielzeug.<br>
+                                    Ist das ihr Teddy oder sein Teddy?<br>
+                                    Sein rechtes Auge zuckt.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">wir</td>
+                                <td class="tdClass">unser(e)</td>
+                                <td class="tdClass">
+                                    Unser Haus.<br>
+                                    Unser großes Haus.<br>
+                                    Sie besucht unser Haus.<br>
+                                    Ist das euer Garten oder unser Garten?<br>
+                                    Unser jüngster Sohn lernt.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">ihr</td>
+                                <td class="tdClass">euer(e)</td>
+                                <td class="tdClass">
+                                    Euer Fahrrad.<br>
+                                    Euer schnelles Fahrrad.<br>
+                                    Ich benutze euer Fahrrad.<br>
+                                    Ist das ihr Auto oder euer Auto?<br>
+                                    Euer kleines Mädchen weint.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">sie (plural)</td>
+                                <td class="tdClass">ihr(e)</td>
+                                <td class="tdClass">
+                                    Ihre Bücher.<br>
+                                    Ihre dicken Bücher.<br>
+                                    Er liest ihre Bücher.<br>
+                                    Sind das unsere Schuhe oder ihre Schuhe?<br>
+                                    Ihre ältesten Freunde kommen.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">Sie (formal)</td>
+                                <td class="tdClass">Ihr(e)</td>
+                                <td class="tdClass">
+                                    Ihre Tasche.<br>
+                                    Ihre schwarze Tasche.<br>
+                                    Ich finde Ihre Tasche.<br>
+                                    Ist das mein Stuhl oder Ihr Stuhl?<br>
+                                    Ihre beste Freundin ruft an.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="tableClass">
+                        <thead>
+                            <tr>
+                                <th class="thClass">Personal Pronoun</th>
+                                <th class="thClass">Masculine (Nominative)</th>
+                                <th class="thClass">Feminine (Nominative)</th>
+                                <th class="thClass">Neuter (Nominative)</th>
+                                <th class="thClass">Masculine (Accusative)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tdClass">ich</td>
+                                <td class="tdClass">meiner</td>
+                                <td class="tdClass">meine</td>
+                                <td class="tdClass">meins</td>
+                                <td class="tdClass">meinen</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">du</td>
+                                <td class="tdClass">deiner</td>
+                                <td class="tdClass">deine</td>
+                                <td class="tdClass">deins</td>
+                                <td class="tdClass">deinen</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">er</td>
+                                <td class="tdClass">seiner</td>
+                                <td class="tdClass">seine</td>
+                                <td class="tdClass">seins</td>
+                                <td class="tdClass">seinen</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">sie (feminine)</td>
+                                <td class="tdClass">ihrer</td>
+                                <td class="tdClass">ihre</td>
+                                <td class="tdClass">ihres</td>
+                                <td class="tdClass">ihren</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">es</td>
+                                <td class="tdClass">seiner</td>
+                                <td class="tdClass">seine</td>
+                                <td class="tdClass">seins</td>
+                                <td class="tdClass">seinen</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">wir</td>
+                                <td class="tdClass">unser</td>
+                                <td class="tdClass">unsere</td>
+                                <td class="tdClass">unser</td>
+                                <td class="tdClass">unseren</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">ihr</td>
+                                <td class="tdClass">euer</td>
+                                <td class="tdClass">eure</td>
+                                <td class="tdClass">euer</td>
+                                <td class="tdClass">euren</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">sie (plural)</td>
+                                <td class="tdClass">ihrer</td>
+                                <td class="tdClass">ihre</td>
+                                <td class="tdClass">ihres</td>
+                                <td class="tdClass">ihren</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">Sie (formal)</td>
+                                <td class="tdClass">Ihrer</td>
+                                <td class="tdClass">Ihre</td>
+                                <td class="tdClass">Ihres</td>
+                                <td class="tdClass">Ihren</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <span class="italic text-red-500">In akkusative, the verb ending becomes "en", for rest, its same  see <a class="font-bold" href="#akkusative-with-verbs">Accusative with Verbs</a></span>
+                </section>
+                <section id="sein-form-with-tenses">
+                    <h2 class="my-6 text-4xl font-bold">Sein Form With Tenses</h2>
+                
+                    <table class="tableClass">
+                        <thead>
+                            <tr>
+                                <th class="thClass">Personal Pronoun</th>
+                                <th class="thClass">Present (Präsens)</th>
+                                <th class="thClass">Past (Präteritum)</th>
+                                <th class="thClass">Future (Futur I - to do)</th>
+                                <th class="thClass">Future (Futur I - to be)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tdClass">ich</td>
+                                <td class="tdClass">bin</td>
+                                <td class="tdClass"><span class="text-fuchsia-600">war</span></td>
+                                <td class="tdClass">werde</td>
+                                <td class="tdClass">werde sein</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">du</td>
+                                <td class="tdClass">bist</td>
+                                <td class="tdClass">warst</td>
+                                <td class="tdClass">wirst</td>
+                                <td class="tdClass">wirst sein</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">er/sie/es</td>
+                                <td class="tdClass">ist</td>
+                                <td class="tdClass"><span class="text-fuchsia-600">war</span></td>
+                                <td class="tdClass">wird</td>
+                                <td class="tdClass">wird sein</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">wir</td>
+                                <td class="tdClass">sind</td>
+                                <td class="tdClass">waren</td>
+                                <td class="tdClass">werden</td>
+                                <td class="tdClass">werden sein</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">ihr</td>
+                                <td class="tdClass">seid</td>
+                                <td class="tdClass">wart</td>
+                                <td class="tdClass">werdet</td>
+                                <td class="tdClass">werdet sein</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">sie/Sie</td>
+                                <td class="tdClass">sind</td>
+                                <td class="tdClass">waren</td>
+                                <td class="tdClass">werden</td>
+                                <td class="tdClass">werden sein</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <span class="text-xl">If the nature of the sentence is about being somewhere then we will use <span class="text-rose-600">werde sein</span>. for actions we will use <span class="text-indigo-500">werde</span> only. following are the example with every pronoun</span>
+                    <table class="tableClass">
+                        <thead>
+                            <tr>
+                                <th class="thClass">Personal Pronoun</th>
+                                <th class="thClass">Present (Präsens)</th>
+                                <th class="thClass">Past (Präteritum)</th>
+                                <th class="thClass">Future (Futur I - to do)</th>
+                                <th class="thClass">Future (Futur I - to be)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tdClass text-gray-700 font-bold">ich</td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Ich bin ein Lehrer.<br>
+                                    Ich bin glücklich.<br>
+                                    Ich bin zu Hause.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Ich <span class="text-fuchsia-600">war</span> ein guter Arzt.<br>
+                                    Ich <span class="text-fuchsia-600">war</span> im Park.<br>
+                                    Ich <span class="text-fuchsia-600">war</span> müde.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Ich werde John heiraten.<br>
+                                    Ich werde kochen.<br>
+                                    Ich werde lernen.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Ich werde im College sein.<br>
+                                    Ich werde in Berlin sein.<br>
+                                    Ich werde im Urlaub sein.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass text-gray-700 font-bold">du</td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Du bist ein Künstler.<br>
+                                    Du bist schnell.<br>
+                                    Du bist im Garten.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Du warst ein großartiger Freund.<br>
+                                    Du warst im Kino.<br>
+                                    Du warst krank.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Du wirst ein Buch lesen.<br>
+                                    Du wirst singen.<br>
+                                    Du wirst arbeiten.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Du wirst in der Schule sein.<br>
+                                    Du wirst beim Arzt sein.<br>
+                                    Du wirst auf der Party sein.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass text-gray-700 font-bold">er</td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Er ist ein Ingenieur.<br>
+                                    Er ist stark.<br>
+                                    Er ist im Büro.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Er <span class="text-fuchsia-600">war</span> ein Held.<br>
+                                    Er <span class="text-fuchsia-600">war</span> auf dem Berg.<br>
+                                    Er <span class="text-fuchsia-600">war</span> verloren.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Er wird Fußball spielen.<br>
+                                    Er wird schreiben.<br>
+                                    Er wird telefonieren.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Er wird im Konzert sein.<br>
+                                    Er wird am Strand sein.<br>
+                                    Er wird im Zug sein.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass text-gray-700 font-bold">sie (feminine)</td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Sie ist eine Ärztin.<br>
+                                    Sie ist klug.<br>
+                                    Sie ist in der Stadt.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Sie <span class="text-fuchsia-600">war</span> eine Tänzerin.<br>
+                                    Sie <span class="text-fuchsia-600">war</span> auf der Brücke.<br>
+                                    Sie <span class="text-fuchsia-600">war</span> traurig.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Sie wird ein Lied singen.<br>
+                                    Sie wird kaufen.<br>
+                                    Sie wird studieren.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Sie wird im Theater sein.<br>
+                                    Sie wird im Café sein.<br>
+                                    Sie wird in der Bibliothek sein.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass text-gray-700 font-bold">es</td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Es ist ein Auto.<br>
+                                    Es ist spät.<br>
+                                    Es ist draußen.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Es <span class="text-fuchsia-600">war</span> ein Sturm.<br>
+                                    Es <span class="text-fuchsia-600">war</span> um Mitternacht.<br>
+                                    Es <span class="text-fuchsia-600">war</span> kalt.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Es wird regnen.<br>
+                                    Es wird klingen.<br>
+                                    Es wird beginnen.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Es wird im Museum sein.<br>
+                                    Es wird im Kasten sein.<br>
+                                    Es wird unter dem Bett sein.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass text-gray-700 font-bold">wir</td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Wir sind Lehrer.<br>
+                                    Wir sind müde.<br>
+                                    Wir sind in Deutschland.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Wir waren im Urlaub.<br>
+                                    Wir waren Studenten.<br>
+                                    Wir waren glücklich.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Wir werden tanzen.<br>
+                                    Wir werden studieren.<br>
+                                    Wir werden feiern.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Wir werden im Restaurant sein.<br>
+                                    Wir werden im Park sein.<br>
+                                    Wir werden auf dem Konzert sein.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass text-gray-700 font-bold">ihr</td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Ihr seid Sportler.<br>
+                                    Ihr seid laut.<br>
+                                    Ihr seid hier.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Ihr wart im Schwimmbad.<br>
+                                    Ihr wart Kinder.<br>
+                                    Ihr wart zu Hause.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Ihr werdet spielen.<br>
+                                    Ihr werdet kochen.<br>
+                                    Ihr werdet reisen.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Ihr werdet in der Schule sein.<br>
+                                    Ihr werdet beim Arzt sein.<br>
+                                    Ihr werdet auf der Party sein.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass text-gray-700 font-bold">sie (plural)</td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Sie sind Ärzte.<br>
+                                    Sie sind freundlich.<br>
+                                    Sie sind aus Frankreich.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Sie waren im Kino.<br>
+                                    Sie waren fleißig.<br>
+                                    Sie waren in Paris.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Sie werden essen.<br>
+                                    Sie werden laufen.<br>
+                                    Sie werden lesen.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Sie werden im Hotel sein.<br>
+                                    Sie werden auf dem Markt sein.<br>
+                                    Sie werden im Museum sein.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass text-gray-700 font-bold">Sie (formal)</td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Sie sind Ingenieur.<br>
+                                    Sie sind pünktlich.<br>
+                                    Sie sind bei uns.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Sie waren Direktor.<br>
+                                    Sie waren korrekt.<br>
+                                    Sie waren im Meeting.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Sie werden anrufen.<br>
+                                    Sie werden antworten.<br>
+                                    Sie werden arbeiten.
+                                </td>
+                                <td class="tdClass text-gray-700 font-bold">
+                                    Sie werden beim Meeting sein.<br>
+                                    Sie werden im Büro sein.<br>
+                                    Sie werden bei der Konferenz sein.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    
+                </section>
+                <section id="model-verbs">
+                    <h2 class="my-6 text-4xl font-bold">Model Verbs</h2>
+                
+                    <table class="tableClass">
+                        <thead>
+                            <tr>
+                                <th class="thClass">Modal Verb</th>
+                                <th class="thClass">Translation</th>
+                                <th class="thClass">Examples</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tdClass">dürfen</td>
+                                <td class="tdClass">"may" or "to be allowed to"</td>
+                                <td class="tdClass">
+                                    Er darf nicht kommen. (He may not come.)<br>
+                                    Darf ich hier rauchen? (May I smoke here?)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">können</td>
+                                <td class="tdClass">"can" or "to be able to"</td>
+                                <td class="tdClass">
+                                    Sie kann das Buch lesen. (She can read the book.)<br>
+                                    Kannst du mir helfen? (Can you help me?)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">mögen</td>
+                                <td class="tdClass">"to like"</td>
+                                <td class="tdClass">
+                                    Ich mag Kaffee. (I like coffee.)<br>
+                                    Mögen Sie Schokolade? (Do you like chocolate?)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">müssen</td>
+                                <td class="tdClass">"must" or "to have to"</td>
+                                <td class="tdClass">
+                                    Du musst lernen. (You must study.)<br>
+                                    Sie müssen gehen. (They have to go.)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">sollen</td>
+                                <td class="tdClass">"should" or "to be supposed to"</td>
+                                <td class="tdClass">
+                                    Wir sollen ihm helfen. (We should help him.)<br>
+                                    Du sollst nicht lügen. (You should not lie.)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">wollen</td>
+                                <td class="tdClass">"want to"</td>
+                                <td class="tdClass">
+                                    Er will nach Hause gehen. (He wants to go home.)<br>
+                                    Sie wollen spielen. (They want to play.)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <span class="text-gray-800 text-2xl">Following is the formation of Model Verbs with each personal Pronouns</span>
+                    <table class="tableClass">
+                        <thead>
+                            <tr>
+                                <th class="thClass">Personal Pronoun</th>
+                                <th class="thClass">dürfen</th>
+                                <th class="thClass">können</th>
+                                <th class="thClass">mögen</th>
+                                <th class="thClass">müssen</th>
+                                <th class="thClass">sollen</th>
+                                <th class="thClass">wollen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tdClass">ich</td>
+                                <td class="tdClass">darf</td>
+                                <td class="tdClass">kann</td>
+                                <td class="tdClass">mag</td>
+                                <td class="tdClass">muss</td>
+                                <td class="tdClass">soll</td>
+                                <td class="tdClass">will</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">du</td>
+                                <td class="tdClass">darfst</td>
+                                <td class="tdClass">kannst</td>
+                                <td class="tdClass">magst</td>
+                                <td class="tdClass">musst</td>
+                                <td class="tdClass">sollst</td>
+                                <td class="tdClass">willst</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">er/sie/es</td>
+                                <td class="tdClass">darf</td>
+                                <td class="tdClass">kann</td>
+                                <td class="tdClass">mag</td>
+                                <td class="tdClass">muss</td>
+                                <td class="tdClass">soll</td>
+                                <td class="tdClass">will</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">wir</td>
+                                <td class="tdClass">dürfen</td>
+                                <td class="tdClass">können</td>
+                                <td class="tdClass">mögen</td>
+                                <td class="tdClass">müssen</td>
+                                <td class="tdClass">sollen</td>
+                                <td class="tdClass">wollen</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">ihr</td>
+                                <td class="tdClass">dürft</td>
+                                <td class="tdClass">könnt</td>
+                                <td class="tdClass">mögt</td>
+                                <td class="tdClass">müsst</td>
+                                <td class="tdClass">sollt</td>
+                                <td class="tdClass">wollt</td>
+                            </tr>
+                            <tr>
+                                <td class="tdClass">sie/Sie</td>
+                                <td class="tdClass">dürfen</td>
+                                <td class="tdClass">können</td>
+                                <td class="tdClass">mögen</td>
+                                <td class="tdClass">müssen</td>
+                                <td class="tdClass">sollen</td>
+                                <td class="tdClass">wollen</td>
                             </tr>
                         </tbody>
                     </table>
