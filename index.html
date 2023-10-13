@@ -6,49 +6,472 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>German Grammar with TailwindCSS</title>
+    <style>
+        /* Custom styles to make the left div fixed */
+        .fixed-div {
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .scrollable-div {
+            margin-left: 20%; /* Based on 1/5 */
+            overflow-y: auto;
+            height: 100vh;
+        }
+        .indexList li {
+            padding-bottom: 5px;
+        }
+        hlb {
+            color: red;
+            font-weight: bold;
+        }
+        h2{
+            font-size: 32px;
+            margin: 20px auto;
+            text-align: left;
+        }
+        section {
+            margin-bottom: 100px;
+        }
+
+    </style>
 </head>
 
-<body class="bg-gray-100 p-8 font-sans">
+<body class="p-8 pb-12 font-sans bg-gray-100">
 
-    <div class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md">
-        <h1 class="text-2xl font-bold mb-6">Key Elements of German Grammar</h1>
+    <div class="flex flex-row fixed h-[90vh]">
 
-        <div class="mb-4">
-            <h2 class="text-xl font-semibold mb-2">1. Nouns & Gender:</h2>
-            <ul class="list-disc pl-5">
-                <li>All German nouns are capitalized.</li>
-                <li>Nouns have one of three genders: masculine (der), feminine (die), or neuter (das). This gender affects the forms of adjectives and pronouns that modify or replace the noun. For instance, "Mann" (man) is masculine (der Mann) while "Frau" (woman) is feminine (die Frau).</li>
-            </ul>
+        <!-- Fixed 1/5 Div for Navigation -->
+        <div class="fixed w-1/5 h-[90vh]  mb-12 bg-gray-200">
+            <div class="px-8 py-4">
+                <h3 class="block font-bold text-4xl">Index</h3>
+                <hr class="border-b border-gray-500 mb-4">
+                <ul class="indexList list-disc ">
+                    <li><a href="#section1" title="Key Elements of German Grammar">Key Elements of German Grammar</a></li>
+                    <li><a href="#genders-in-cases" title="Genders in Nominative, Accusative, Dative, and Genitive">Genders in Nominative, Accusative, Dative, and Genitive</a></li>
+                    <li><a href="#german-alphabets" title="German Alphabets, Sounds, and Umlauts">German Alphabets, Sounds, and Umlauts</a></li>
+                    <li><a href="#personal-pronouns" title="German Personal Pronouns">German Personal Pronouns</a></li>
+                    <li><a href="#sein-forms" title="Forms of the Verb \"sein\" (to be)">Forms of the Verb "sein" (to be)</a></li>
+                    <li><a href="#gender-adjectives" title="German Gender and Adjective Endings">German Gender and Adjective Endings</a></li>
+                    <li><a href="#" title=""></a></li>
+                    <li><a href="#" title=""></a></li>
+                </ul>
+            </div>
         </div>
 
-        <div class="mb-4">
-            <h2 class="text-xl font-semibold mb-2">2. Cases:</h2>
-            <ul class="list-disc pl-5">
-                <li>German uses four grammatical cases: nominative, accusative, dative, and genitive.</li>
-                <li class="pl-5 list-decimal">
-                    Nominative: Used for the subject of a sentence. E.g., "Der Mann läuft" (The man runs).<br>
-                    Accusative: Used for the direct object. E.g., "Ich sehe den Mann" (I see the man).<br>
-                    Dative: Used for the indirect object. E.g., "Ich gebe dem Mann ein Buch" (I give the man a book).<br>
-                    Genitive: Shows possession. E.g., "Das Buch des Mannes" (The man's book).
-                </li>
-            </ul>
-        </div>
+        <!-- Scrollable 4/5 Div for Content -->
+        <div class="w-4/5 fixed h-[90vh] left-[22%] w-[75vw] overflow-y-auto">
+            <div class="w-full p-6 mx-auto bg-white rounded-lg shadow-md">
+                <section id="section1">
+                    <h2 class="my-6 text-4xl font-bold">Key Elements of German Grammar</h2>
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold mb-2">1. Nouns & Gender:</h3>
+                        <ul class="list-disc pl-5">
+                            <li>All German nouns are capitalized.</li>
+                            <li>Nouns have one of three genders: masculine (der), feminine (die), or neuter (das). This gender affects the forms of adjectives and pronouns that modify or replace the noun. For instance, "Mann" (man) is masculine (der Mann) while "Frau" (woman) is feminine (die Frau).</li>
+                        </ul>
+                    </div>
+            
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold mb-2">2. Cases:</h3>
+                        <ul class="list-disc pl-5">
+                            <li>German uses four grammatical cases: nominative, accusative, dative, and genitive.</li>
+                            <li class="pl-5 list-decimal">
+                                Nominative: Used for the subject of a sentence. E.g., "Der Mann läuft" (The man runs).<br>
+                                Accusative: Used for the direct object. E.g., "Ich sehe den Mann" (I see the man).<br>
+                                Dative: Used for the indirect object. E.g., "Ich gebe dem Mann ein Buch" (I give the man a book).<br>
+                                Genitive: Shows possession. E.g., "Das Buch des Mannes" (The man's book).
+                            </li>
+                        </ul>
+                    </div>
+            
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold mb-2">3. Verb Conjugation & Placement:</h3>
+                        <ul class="list-disc pl-5">
+                            <li>Verbs are conjugated based on the subject, tense, and mood.</li>
+                            <li>In main clauses, the conjugated verb is typically the second element. E.g., "Ich kann Deutsch sprechen" (I can speak German).</li>
+                            <li>In subordinate clauses, the conjugated verb moves to the end. E.g., "Ich glaube, dass er Deutsch sprechen kann" (I believe that he can speak German).</li>
+                        </ul>
+                    </div>
+            
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold mb-2">4. Adjective Declension:</h3>
+                        <ul class="list-disc pl-5">
+                            <li>Adjectives change form based on the gender, case, and number (singular/plural) of the noun they modify.</li>
+                            <li>For instance, the adjective "gut" (good) can be "guter" (masculine, nominative), "gute" (feminine, nominative), "gutes" (neuter, nominative), "guten" (masculine, accusative) and so on, depending on the noun it's describing.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section id="genders-in-cases">
+                    <h2 class="my-6 text-4xl font-bold">Genders in Nominative, Accusative, Dative, and Genitive</h2>
+                
+                    <table class="min-w-full table-auto border-collapse border border-gray-300 mt-4">
+                        <thead>
+                            <tr>
+                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Case</th>
+                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Masculine</th>
+                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Feminine</th>
+                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Neuter</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Nominative</td>
+                                <td class="border border-gray-300 px-4 py-2">der</td>
+                                <td class="border border-gray-300 px-4 py-2">die</td>
+                                <td class="border border-gray-300 px-4 py-2">das</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Accusative</td>
+                                <td class="border border-gray-300 px-4 py-2">den</td>
+                                <td class="border border-gray-300 px-4 py-2">die</td>
+                                <td class="border border-gray-300 px-4 py-2">das</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Dative</td>
+                                <td class="border border-gray-300 px-4 py-2">dem</td>
+                                <td class="border border-gray-300 px-4 py-2">der</td>
+                                <td class="border border-gray-300 px-4 py-2">dem</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Genitive</td>
+                                <td class="border border-gray-300 px-4 py-2">des</td>
+                                <td class="border border-gray-300 px-4 py-2">der</td>
+                                <td class="border border-gray-300 px-4 py-2">des</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section id="german-alphabets">
+                    <h2 class="my-6 text-4xl font-bold">German Alphabets, Sounds, and Umlauts</h2>
+                
+                    <!-- Table for Alphabets and their Sounds -->
+                    <table class="min-w-full table-auto border-collapse border border-gray-300 mt-4">
+                        <thead>
+                            <tr>
+                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Letter</th>
+                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Sound</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- For simplicity, I'll give a few examples. The sounds might not be exactly represented as they would in phonetics, but they provide an approximate understanding. -->
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">A, a</td>
+                                <td class="border border-gray-300 px-4 py-2">ah</td>
+                            </tr>
+                            <!-- ... -->
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Ä, ä</td>
+                                <td class="border border-gray-300 px-4 py-2">similar to "air"</td>
+                            </tr>
+                            <!-- ... -->
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Ö, ö</td>
+                                <td class="border border-gray-300 px-4 py-2">similar to "bird"</td>
+                            </tr>
+                            <!-- ... -->
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Ü, ü</td>
+                                <td class="border border-gray-300 px-4 py-2">similar to "fleece" but with lips rounded</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">ß</td>
+                                <td class="border border-gray-300 px-4 py-2">sharp "s" sound, like "ss" in "kiss"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                
+                    <!-- Table for Combined Letters and their Sounds -->
+                    <h3 class="mt-6">Sounds for Combined Letters</h3>
+                    <table class="min-w-full table-auto border-collapse border border-gray-300 mt-4">
+                        <thead>
+                            <tr>
+                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Combined Letters</th>
+                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Sound</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">ei</td>
+                                <td class="border border-gray-300 px-4 py-2">like "eye"</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">ie</td>
+                                <td class="border border-gray-300 px-4 py-2">like "ee"</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">eu</td>
+                                <td class="border border-gray-300 px-4 py-2">like "oy" in "boy"</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">au</td>
+                                <td class="border border-gray-300 px-4 py-2">like "ow" in "cow"</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">sch</td>
+                                <td class="border border-gray-300 px-4 py-2">like "sh" in "shoe"</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">ch</td>
+                                <td class="border border-gray-300 px-4 py-2">like "k" in "Bach" or a soft hissing sound, depending on context</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">pf</td>
+                                <td class="border border-gray-300 px-4 py-2">like "pf" in "Pfennig"</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">tz</td>
+                                <td class="border border-gray-300 px-4 py-2">sharp "ts" sound</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section id="personal-pronouns">
+                    <h2 class="my-6 text-4xl font-bold">German Personal Pronouns</h2>
+                
+                    <table class="min-w-full table-auto border-collapse border border-gray-300 mt-4">
+                        <thead>
+                            <tr>
+                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Pronoun</th>
+                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">English Meaning</th>
+                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Pronunciation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">ich</td>
+                                <td class="border border-gray-300 px-4 py-2">I</td>
+                                <td class="border border-gray-300 px-4 py-2">eekh (soft 'kh')</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">du</td>
+                                <td class="border border-gray-300 px-4 py-2">you (informal, singular)</td>
+                                <td class="border border-gray-300 px-4 py-2">doo</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">er</td>
+                                <td class="border border-gray-300 px-4 py-2">he</td>
+                                <td class="border border-gray-300 px-4 py-2">air</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">sie</td>
+                                <td class="border border-gray-300 px-4 py-2">she</td>
+                                <td class="border border-gray-300 px-4 py-2">zee</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">es</td>
+                                <td class="border border-gray-300 px-4 py-2">it</td>
+                                <td class="border border-gray-300 px-4 py-2">es</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">wir</td>
+                                <td class="border border-gray-300 px-4 py-2">we</td>
+                                <td class="border border-gray-300 px-4 py-2">veer</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">ihr</td>
+                                <td class="border border-gray-300 px-4 py-2">you (informal, plural)</td>
+                                <td class="border border-gray-300 px-4 py-2">eer</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">sie</td>
+                                <td class="border border-gray-300 px-4 py-2">they</td>
+                                <td class="border border-gray-300 px-4 py-2">zee</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Sie</td>
+                                <td class="border border-gray-300 px-4 py-2">you (formal, singular & plural)</td>
+                                <td class="border border-gray-300 px-4 py-2">zee</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section id="sein-forms">
+                    <h2>Forms of the Verb "sein" (to be)</h2>
+                
+                    <table class="min-w-full table-auto border-collapse border border-gray-300 mt-4">
+                        <thead>
+                            <tr>
+                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Pronoun</th>
+                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Form of "sein"</th>
+                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Examples</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">ich</td>
+                                <td class="border border-gray-300 px-4 py-2">bin</td>
+                                <td class="border border-gray-300 px-4 py-2">Ich bin ein Mann (maan). (I am a man.)<br>Ich bin müde (mü-deh). (I am tired.)<br>Ich bin glücklich (glück-lish). (I am happy.)</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">du</td>
+                                <td class="border border-gray-300 px-4 py-2">bist</td>
+                                <td class="border border-gray-300 px-4 py-2">Du bist eine Frau (frow). (You are a woman.)<br>Du bist jung (yung). (You are young.)<br>Du bist freundlich (froynd-lish). (You are friendly.)</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">er/sie/es</td>
+                                <td class="border border-gray-300 px-4 py-2">ist</td>
+                                <td class="border border-gray-300 px-4 py-2">Er ist ein Lehrer (lay-rer). (He is a teacher.)<br>Sie ist Ärztin (air-ts-tin). (She is a doctor.)<br>Es ist kalt (kalt). (It is cold.)</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">wir</td>
+                                <td class="border border-gray-300 px-4 py-2">sind</td>
+                                <td class="border border-gray-300 px-4 py-2">Wir sind Studenten (shtoo-den-ten). (We are students.)<br>Wir sind in Berlin (ber-leen). (We are in Berlin.)<br>Wir sind Freunde (froynde). (We are friends.)</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">ihr</td>
+                                <td class="border border-gray-300 px-4 py-2">seid</td>
+                                <td class="border border-gray-300 px-4 py-2">Ihr seid Kollegen (ko-lay-gen). (You all are colleagues.)<br>Ihr seid laut (lout). (You all are loud.)<br>Ihr seid Kinder (kin-der). (You all are children.)</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">sie/Sie</td>
+                                <td class="border border-gray-300 px-4 py-2">sind</td>
+                                <td class="border border-gray-300 px-4 py-2">sie sind Lehrerinnen (lay-rer-innen). (They are female teachers.)<br>Sie sind meine Nachbarn (nahkh-barn). (They are my neighbors.)<br>Sie sind Frau Müller? (frow müller). (Are you Mrs. Müller?)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section id="gender-adjectives">
+                    <h2>German Gender and Adjective Endings</h2>
+                    
+                    <p>
+                    In the German language, every noun has a grammatical gender: masculine (der), feminine (die), or neuter (das). When an adjective is used to describe a noun, the ending of the adjective changes to correspond to the gender (and case) of the noun it is describing. This is particularly evident in the nominative case.
+                    </p>
+                    
+                    <p>
+                    For example, in the nominative case, masculine nouns with "der" take the adjective ending "-er". So, "der Tisch" (the table) becomes "der gute Tisch" when using the adjective "gut" (good). Similarly, feminine nouns with "die" use the ending "-e", and neuter nouns with "das" take "-es" or "-s".
+                    </p>
+                
+                    <table class="min-w-full table-auto border-collapse border border-gray-300 mt-4">
+                        <thead>
+                            <tr>
+                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold w-[400px]">Gender (Article)</th>
+                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Example Sentence with Noun</th>
+                                <th class="border border-gray-300 px-4 py-2 text-gray-700 font-bold">Example Sentence with Adjective</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Examples with masculine "der" -->
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2 text-2xl" rowspan="4">d<hlb>er</hlb></td>
+                                <td class="border border-gray-300 px-4 py-2">Das ist d<hlb>er</hlb> Tisch.</td>
+                                <td class="border border-gray-300 px-4 py-2">Das ist ein alt<hlb>er</hlb> Tisch.</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Das ist d<hlb>er</hlb> Apfel.</td>
+                                <td class="border border-gray-300 px-4 py-2">Das ist ein grün<hlb>er</hlb> Apfel.</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Das ist d<hlb>er</hlb> Stuhl.</td>
+                                <td class="border border-gray-300 px-4 py-2">Das ist ein bequem<hlb>er</hlb> Stuhl.</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Das ist d<hlb>er</hlb> Kuli.</td>
+                                <td class="border border-gray-300 px-4 py-2">Das ist ein blau<hlb>er</hlb> Kuli.</td>
+                            </tr>
+                        
+                            <!-- Examples with feminine "die" -->
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2 text-2xl" rowspan="4">d<hlb>ie</hlb></td>
+                                <td class="border border-gray-300 px-4 py-2">Das ist d<hlb>ie</hlb> Lampe.</td>
+                                <td class="border border-gray-300 px-4 py-2">Das ist eine alt<hlb>e</hlb> Lampe.</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Das ist d<hlb>ie</hlb> Blume.</td>
+                                <td class="border border-gray-300 px-4 py-2">Das ist eine schön<hlb>e</hlb> Blume.</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Das ist d<hlb>ie</hlb> Tür.</td>
+                                <td class="border border-gray-300 px-4 py-2">Das ist eine groß<hlb>e</hlb> Tür.</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Das ist d<hlb>ie</hlb> Zeitung.</td>
+                                <td class="border border-gray-300 px-4 py-2">Das ist eine interessant<hlb>e</hlb> Zeitung.</td>
+                            </tr>
+                        
+                            <!-- Examples with neuter "das" -->
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2 text-2xl" rowspan="4">das</td>
+                                <td class="border border-gray-300 px-4 py-2">Das ist das Buch.</td>
+                                <td class="border border-gray-300 px-4 py-2">Das ist ein alt<hlb>es</hlb> Buch.</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Das ist das Fenster.</td>
+                                <td class="border border-gray-300 px-4 py-2">Das ist ein offen<hlb>es</hlb> Fenster.</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Das ist das Auto.</td>
+                                <td class="border border-gray-300 px-4 py-2">Das ist ein schnell<hlb>es</hlb> Auto.</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Das ist das Kind.</td>
+                                <td class="border border-gray-300 px-4 py-2">Das ist ein klein<hlb>es</hlb> Kind.</td>
+                            </tr>
+                            <!-- here comes plural -->
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2 text-2xl" rowspan="12">d<hlb>ie</hlb><p>(the plural of all genders is <span class="italic text-sky-500 font-bold">die</span>)</p></td>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Tische.</td>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind die alten Tische.</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Äpfel.</td>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind die grünen Äpfel.</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Stühle.</td>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind die bequemen Stühle.</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Kulis.</td>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind die blauen Kulis.</td>
+                            </tr>
+                        
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Lampen.</td>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind die alten Lampen.</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Blumen.</td>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind die schönen Blumen.</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Türen.</td>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind die großen Türen.</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Zeitungen.</td>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind die interessanten Zeitungen.</td>
+                            </tr>
+                        
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Bücher.</td>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind die alten Bücher.</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Fenster.</td>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind die offenen Fenster.</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Autos.</td>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind die schnellen Autos.</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind d<hlb>ie</hlb> Kinder.</td>
+                                <td class="border border-gray-300 px-4 py-2">Diese sind die kleinen Kinder.</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">in Nautrum <span class="italic text-sky-500 font-bold">Das</span> means <span class="italic text-sky-500 font-bold">The</span> but in plural <span class="italic text-sky-500 font-bold">Das</span> can be use for <span class="italic text-sky-500 font-bold">Those</span> as well. so all above sentences using <span class="italic text-sky-500 font-bold">Diese</span> can use <span class="italic text-sky-500 font-bold">Das</span> to say <span class="italic text-sky-500 font-bold">Those are</span></td>
+                                <td class="border border-gray-300 px-4 py-2">Das sind d<hlb>ie</hlb> Kinder.</td>
+                                <td class="border border-gray-300 px-4 py-2">Das sind die kleinen Kinder.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <!-- ... (Rest of the content from the previous code block) ... -->
 
-        <div class="mb-4">
-            <h2 class="text-xl font-semibold mb-2">3. Verb Conjugation & Placement:</h2>
-            <ul class="list-disc pl-5">
-                <li>Verbs are conjugated based on the subject, tense, and mood.</li>
-                <li>In main clauses, the conjugated verb is typically the second element. E.g., "Ich kann Deutsch sprechen" (I can speak German).</li>
-                <li>In subordinate clauses, the conjugated verb moves to the end. E.g., "Ich glaube, dass er Deutsch sprechen kann" (I believe that he can speak German).</li>
-            </ul>
-        </div>
+            </div>
 
-        <div class="mb-4">
-            <h2 class="text-xl font-semibold mb-2">4. Adjective Declension:</h2>
-            <ul class="list-disc pl-5">
-                <li>Adjectives change form based on the gender, case, and number (singular/plural) of the noun they modify.</li>
-                <li>For instance, the adjective "gut" (good) can be "guter" (masculine, nominative), "gute" (feminine, nominative), "gutes" (neuter, nominative), "guten" (masculine, accusative) and so on, depending on the noun it's describing.</li>
-            </ul>
         </div>
 
     </div>
